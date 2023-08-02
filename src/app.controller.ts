@@ -23,10 +23,11 @@ export class AppController {
   getNum: number;
 
   @Get()
-  getHello(): string {
+  async getHello() {
     console.log(this.num);
     console.log(this.getNum);
-    return this.appService.getHello();
+    let res = await this.appService.getHello();
+    return res;
   }
 
   @Get('getName')
